@@ -1,0 +1,17 @@
+{
+
+"polis": {
+    "name": "Polis",
+    "line": "Circle",
+    "faction": "Neutral",
+    "hazards": [],
+    "neighbors": ["arbatskaya", "kievskaya", "biblioteka"]
+},
+"arbatskaya": {
+    "name": "Arbatskaya",
+    "line": "Blue",
+    "faction": "Hansa",
+    "hazards": ["radiation"],
+    "neighbors": ["polis", "ploshad_revolyutsii"]
+}
+}
