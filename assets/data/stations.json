@@ -5,13 +5,17 @@
     "line": "Circle",
     "faction": "Neutral",
     "hazards": [],
-    "neighbors": ["arbatskaya", "kievskaya", "biblioteka"]
+    "neighbors": ["arbatskaya", "kievskaya", "biblioteka"],
+    "x": 450,
+    "y": 300
 },
 "arbatskaya": {
     "name": "Arbatskaya",
     "line": "Blue",
     "faction": "Hansa",
     "hazards": ["radiation"],
-    "neighbors": ["polis", "ploshad_revolyutsii"]
+    "neighbors": ["polis", "ploshad_revolyutsii"],
+    "x": 350,
+    "y": 280
 }
 }
