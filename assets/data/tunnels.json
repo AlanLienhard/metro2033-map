@@ -4,5 +4,11 @@
         "to": "arbatskaya",
         "blocked": false,
         "danger": "medium"
+    },
+    {
+        "from": "polis",
+        "to": "vdnh",
+        "blocked": false,
+        "danger": "medium"
     }
 ]
