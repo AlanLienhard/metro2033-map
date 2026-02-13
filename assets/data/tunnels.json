@@ -3,12 +3,28 @@
         "from": "polis",
         "to": "arbatskaya",
         "blocked": false,
-        "danger": "medium"
+        "danger": "medium",
+        "type": "straight"
     },
     {
         "from": "polis",
         "to": "vdnh",
         "blocked": false,
-        "danger": "medium"
+        "danger": "medium",
+        "type": "arc"
+    },
+    {
+        "from": "vdnh",
+        "to": "alexeyevskaya",
+        "blocked": false,
+        "danger": "high",
+        "type": "straight"
+    },
+    {
+        "from": "botanichesky_sad",
+        "to": "vdnh",
+        "blocked":false,
+        "danger": "very high",
+        "type": "straight"
     }
 ]
