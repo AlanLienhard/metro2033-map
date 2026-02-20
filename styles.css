@@ -5,3 +5,17 @@
   border: 1px solid black;
   padding: 6px;
 }
+
+#searchContainer {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+}
+
+#stationSearch {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}

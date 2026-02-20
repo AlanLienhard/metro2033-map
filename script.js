@@ -5,19 +5,20 @@ const height = 600;
 const svg = d3.select('body').append('svg').attr('width', width).attr('height', height);
 
 
-// search input
-d3.select("body")
-.append("input")
-.attr("type", "text")
-.attr("id", "stationSearch")
-.attr("placeholder", "Search for a station")
-.style("margin", "10px")
-.style("padding", "5px")
+
 
  Promise.all([
     d3.json('./assets/data/stations.json'),
     d3.json('./assets/data/tunnels.json')
  ]).then(([stationsData, tunnelsData]) => {
+  // search bar 
+  d3.select("body")
+  .append("div")
+  .attr("id", "searchContainer")
+  .append("input")
+  .attr("type", "text")
+  .attr("id", "stationSearch")
+  .attr("placeholder", "Search for a station");
 
   const straight = tunnelsData.filter(t => t.type === "straight");
   const arc = tunnelsData.filter(t => t.type === "arc");
@@ -131,13 +132,7 @@ d3.select("body")
        .style("pointer-events", "none");
 
 
-      // Tooltip reference for self: https://stackoverflow.com/questions/10805184/show-data-on-mouseover-of-circle
-//       const tooltip = d3.selectAll("circle")
-//       .data(stationsArray)
-//       .enter()
-//       .append("svg:circle")
-//       .append("svg:title")
-//       .text(function(d) {return d.x});
+
 
 const tooltip = d3.select("body").append("div")
 .attr("class", "tooltip")
@@ -160,9 +155,18 @@ circles.on("mouseover", function(event, d){
   d3.select("#stationSearch").on("input", function() {
     const query = this.value.toLowerCase();
 
-    stationGroups.select("text")
+    stationGroups
+    .transition()
+    .duration(200)
+    .style("opacity", d => {
+      if (!query) return 1;
+      return d.name.toLowerCase().includes(query) ? 1 : 0.2;
+    })
+    .style("pointer-events", d => {
+      if (!query) return "all";
+      return d.name.toLowerCase().includes(query) ? "all" : "none";
+    })
     
-    .style("fill", d => d.name.toLowerCase().includes(query));
   });
   
   
