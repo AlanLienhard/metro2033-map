@@ -6,13 +6,7 @@
         "danger": "medium",
         "type": "straight"
     },
-    {
-        "from": "polis",
-        "to": "vdnh",
-        "blocked": false,
-        "danger": "medium",
-        "type": "arc"
-    },
+    
     {
         "from": "vdnh",
         "to": "alexeyevskaya",
@@ -21,10 +15,40 @@
         "type": "straight"
     },
     {
+        "from": "alexeyevskaya",
+        "to": "rizhskaya",
+        "blocker": false,
+        "danger": "low",
+        "type":"straight"
+    },
+    {
         "from": "botanichesky_sad",
         "to": "vdnh",
         "blocked":false,
         "danger": "very high",
         "type": "straight"
+    },
+    {
+        "from": "sviblovo",
+        "to": "botanichesky_sad",
+        "blocked": false,
+        "danger": "very high",
+        "type": "straight"
+    },
+    {
+        "from": "prospekt_mira",
+        "to": "novoslobodskaya",
+        "blocked": false,
+        "danger": "low",
+        "type":"arc",
+        "side": 1
+    },
+    {
+        "from": "novoslobodskaya",
+        "to": "belorusskaya",
+        "blocked": false,
+        "danger": "low",
+        "type":"arc",
+        "side": 1
     }
 ]

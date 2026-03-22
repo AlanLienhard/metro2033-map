@@ -1,5 +1,5 @@
-const width = 900;
-const height = 600;
+const width = 1900;
+const height = 1600;
 
 
 const svg = d3.select('body').append('svg').attr('width', width).attr('height', height);
@@ -85,7 +85,7 @@ const svg = d3.select('body').append('svg').attr('width', width).attr('height', 
     const strength = d.curve ?? 60;
     
     //    sweep=1 => one side, sweep=0 => other side
-    const side = -1;
+    const side = d.side ?? -1;
 
     // 8) control point = midpoint pushed sideways
     const cx = mx + nx * strength * side;
@@ -103,7 +103,7 @@ const svg = d3.select('body').append('svg').attr('width', width).attr('height', 
 
 
      const factionColors = {
-      "Hansa" : "brown",
+      "Hanza" : "brown",
       "Red Line": "red",
       "Fourth Reich": "gray",
       "VDNKh Commonwealth": "blue",

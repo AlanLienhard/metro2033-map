@@ -16,16 +16,27 @@
     "hazards": ["Radiation"],
     "neighbors": ["polis", "ploshad_revolyutsii"],
     "x": 350,
-    "y": 280
+    "y": 310
 },
+
+"sviblovo": {
+    "name": "Sviblovo",
+    "line": "Kaluzhsko-Rizhskaya",
+    "faction": "abandoned",
+    "hazards": ["Dark Ones"],
+    "neighbors": ["botanichesky_sad", "babuschkinskaja"],
+    "x": 1100,
+    "y": 40
+},
+
 "botanichesky_sad": {
     "name": "Botanichesky Sad",
     "line": "Kaluzhsko-Rizhskaya",
     "faction": "abandoned",
     "hazards": ["Dark Ones"],
     "neighbors": ["Sviblovo", "vdnkh"],
-    "x": 770,
-    "y": 40
+    "x": 1050,
+    "y": 100
 },
 
 "vdnh" : {
@@ -34,8 +45,8 @@
     "faction": "VDNKh Commonwealth",
     "hazards": ["Dark Ones"],
     "neighbors": ["alekseevskaya", "botanichesky_sad"],
-    "x": 750,
-    "y": 100
+    "x": 1050,
+    "y": 150
 },
 "alexeyevskaya" : {
     "name": "Alexeyevskaya",
@@ -43,9 +54,101 @@
     "faction":"VDNKh Commonwealth",
     "hazards": [],
     "neighbors": ["vdnkh", "rizhskaya"],
+    "x": 1050,
+    "y": 200
+},
+"rizhskaya": {
+    "name":"Rizhskaya",
+    "line": "Kaluzhsko-Rizhskaya",
+    "faction": "VDNKh Commonwealth",
+    "hazards": [],
+    "neighbors": ["vdnkh", "prospekt_mira"],
+    "x": 1050,
+    "y": 250
+},
+"prospekt_mira": {
+        "name": "Prospekt Mira",
+        "line": "Circle",
+        "faction": "Hanza",
+        "hazards": ["Proximity to Dark Ones"],
+        "neighbors": ["Rizhskaya, Novoslobodskaya, Komsomol'skaya, Sukharevskaya"],
+        "x": 1000,
+        "y": 300
+    },
+"novoslobodskaya": {
+    "name":"Novoslobodskaya",
+    "line": "Circle",
+    "faction": "Hanza",
+    "hazards": [],
+    "neighbors": ["prospekt_mira", "mendeleevskaya", "belorusskaya", "tsvetnoy_bulvar"],
+    "x": 700,
+    "y": 300
+},
+"mendeleevskaya": {
+    "name":"Mendeleevskaya",
+    "line": "Circle",
+    "faction": "Hanza",
+    "hazards": [],
+    "neighbors": ["novoslobodskaya", "savelovskaya"],
+    "x": 675,
+    "y": 250
+},
+"belorusskaya": {
+    "name":"Belorusskaya",
+    "line": "Circle",
+    "faction": "Hanza",
+    "hazards": [],
+    "neighbors": ["novoslobodskaya", "dinamo", "mayakovskaya", "krasnopresemskaya"],
+    "x": 550,
+    "y": 400
+},
+"krasnopresemskaya": {
+    "name":"Krasnopresemskaya",
+    "line": "Circle",
+    "faction": "Hanza",
+    "hazards": [],
+    "neighbors": ["ulitsa_1905_goda", "barrikadnaya", "belorusskaya", "kievskaya"],
+    "x": 525,
+    "y": 500
+},
+"kievskaya": {
+    "name":"Kievskaya",
+    "line": "Circle",
+    "faction": "Hanza",
+    "hazards": [],
+    "neighbors": ["park_kultury", "krasnopresemskaya", "smolenskaya"],
+    "x": 550,
+    "y": 600
+},
+"park_kultury": {
+    "name":"Park Kultury",
+    "line": "Circle",
+    "faction": "Hanza",
+    "hazards": ["Red Line"],
+    "neighbors": ["kievskaya", "oktyabr'skaya", "frunzenskaya"],
+    "x": 600,
+    "y": 670
+},
+"oktyabr'skaya": {
+    "name":"Oktyabr'skaya",
+    "line": "Circle",
+    "faction": "Hanza",
+    "hazards": ["Organized crime adjacent"],
+    "neighbors": ["park_kultury", "dobryninskaya", "shabolovskaya"],
     "x": 750,
-    "y": 150
-
+    "y": 720
+},
+    "_comment-template": {
+        "name":"",
+        "line": "",
+        "faction": "",
+        "hazards": [],
+        "neighbors": [""],
+        "x": 1,
+        "y": 2
+    }
 
 }
-}
+
+
+
