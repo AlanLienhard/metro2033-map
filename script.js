@@ -11,14 +11,22 @@ const svg = d3.select('body').append('svg').attr('width', width).attr('height', 
     d3.json('./assets/data/stations.json'),
     d3.json('./assets/data/tunnels.json')
  ]).then(([stationsData, tunnelsData]) => {
+
+  // dijkstra algorithm
+ 
+
   // search bar 
-  d3.select("body")
+  const searchContainer = d3.select("body")
   .append("div")
-  .attr("id", "searchContainer")
-  .append("input")
+  .attr("id", "searchContainer");
+
+  searchContainer.append("input")
   .attr("type", "text")
   .attr("id", "stationSearch")
+  .attr("list", "stationList")
   .attr("placeholder", "Search for a station");
+
+  const datalist = searchContainer.append("datalist").attr("id", "stationList");
 
   const straight = tunnelsData.filter(t => t.type === "straight");
   const arc = tunnelsData.filter(t => t.type === "arc");
