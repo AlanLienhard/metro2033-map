@@ -1,8 +1,8 @@
-const width = 1900;
-const height = 1600;
+const width = 1200;
+const height = 1200;
 
 
-const svg = d3.select('body').append('svg').attr('width', width).attr('height', height);
+const svg = d3.select('body').append('svg').attr('width', width).attr('height', height).attr("viewBox", `0 0 ${width} ${height}`);
 
 
 
@@ -12,7 +12,32 @@ const svg = d3.select('body').append('svg').attr('width', width).attr('height', 
     d3.json('./assets/data/tunnels.json')
  ]).then(([stationsData, tunnelsData]) => {
 
-  // dijkstra algorithm
+// Note to self: https://www.d3indepth.com/zoom-and-pan/ tutorial article for zoom
+const root = svg.append("g");
+const zoom = d3.zoom()
+  .scaleExtent([0.5, 5])
+  .on("zoom", (event) => {
+    root.attr("transform", event.transform);
+  });
+
+svg.call(zoom);
+
+console.log("Stations:");
+console.log(Object.keys(stationsData));
+
+console.log("Tunnel validation:");
+
+tunnelsData.forEach(t => {
+  if (!stationsData[t.from]) {
+    console.error("Missing FROM:", t.from);
+  }
+
+  if (!stationsData[t.to]) {
+    console.error("Missing TO:", t.to);
+  }
+});
+
+  // dijkstra algorithm for route-finding
  
 
   // search bar 
@@ -35,20 +60,25 @@ const svg = d3.select('body').append('svg').attr('width', width).attr('height', 
   console.log("Loaded stations and tunnels!");
   console.log(stationsData, tunnelsData);
     //Code for drawing tunnels
-    svg.selectAll("line.tunnel")
+    root.selectAll("line.tunnel")
     .data(straight)
     .enter()
     .append("line")
     .attr("class", "tunnel")
-    .attr("x1", d => stationsData[d.from].x)
-    .attr("y1", d => stationsData[d.from].y)
-    .attr("x2", d => stationsData[d.to].x)
-    .attr("y2", d => stationsData[d.to].y)
+    .attr("x1", d => stationsData[d.from].x ?? 0)
+    .attr("y1", d => stationsData[d.from].y ?? 0)
+    .attr("x2", d => stationsData[d.to].x ?? 0)
+    .attr("y2", d => stationsData[d.to].y ?? 0)
+    .attr("x1", d => {
+      console.log("FROM:", d.from);
+      console.log(stationsData[d.from]);
+      return stationsData[d.from]?.x ?? 0;
+    })
     .style("stroke", "black")
     .style("stroke-width", 5)
     .style("opacity", 0.6);
 
-    svg.selectAll("path.tunnelCurve")
+    root.selectAll("path.tunnelCurve")
     .data(arc)
     .enter()
     .append("path")
@@ -112,7 +142,7 @@ const svg = d3.select('body').append('svg').attr('width', width).attr('height', 
       //Code for drawing stations
       var stationsArray = Object.values(stationsData); // Object -> Array, because D3 converted JSON -> Object already
 
-      const stationGroups = svg.selectAll("g.station")
+      const stationGroups = root.selectAll("g.station")
       .data(stationsArray)
       .enter()
       .append("g")
@@ -146,14 +176,15 @@ const tooltip = d3.select("body").append("div")
 .attr("class", "tooltip")
 .style("opacity", 0)
 
+
 //events for circles
 
 circles.on("mouseover", function(event, d){
   tooltip
   .style("opacity", 1)
   .html(d.name + "<p>" + "Faction: " + d.faction + "</p>" + "<p>" + "Hazards: " + d.hazards + "</p>")
-  .style("left", (d3.event.pageX-25) + "px")
-  .style("top", (d3.event.pageY-75) + "px")
+  .style("left", (event.pageX-25) + "px")
+  .style("top", (event.pageY-75) + "px")
 })
 .on("mouseout", function(d){
   tooltip.style("opacity", 0)

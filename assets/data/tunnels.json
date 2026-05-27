@@ -1,6 +1,6 @@
 [
     {
-        "from": "polis",
+        "from": "smolenskaya",
         "to": "arbatskaya",
         "blocked": false,
         "danger": "medium",
@@ -8,14 +8,14 @@
     },
     
     {
-        "from": "vdnh",
-        "to": "alexeyevskaya",
+        "from": "vdnkh",
+        "to": "alekseevskaya",
         "blocked": false,
         "danger": "high",
         "type": "straight"
     },
     {
-        "from": "alexeyevskaya",
+        "from": "alekseevskaya",
         "to": "rizhskaya",
         "blocker": false,
         "danger": "low",
@@ -23,7 +23,7 @@
     },
     {
         "from": "botanichesky_sad",
-        "to": "vdnh",
+        "to": "vdnkh",
         "blocked":false,
         "danger": "very high",
         "type": "straight"
@@ -36,6 +36,20 @@
         "type": "straight"
     },
     {
+        "from": "babushkinskaya",
+        "to": "sviblovo",
+        "blocked": false,
+        "danger": "very high",
+        "type": "straight"
+    },
+    {
+        "from": "medvedkovo",
+        "to": "babushkinskaya",
+        "blocked": false,
+        "danger":"very high",
+        "type":"straight"
+    },
+    {
         "from": "prospekt_mira",
         "to": "novoslobodskaya",
         "blocked": false,
@@ -44,8 +58,58 @@
         "side": 1
     },
     {
+        "from": "prospekt_mira",
+        "to": "sukharevskaya",
+        "blocked": false,
+        "danger":"middle",
+        "type":"straight"
+    },
+    {
+        "from": "sukharevskaya",
+        "to": "turgenevskaya",
+        "blocked": false,
+        "danger":"middle",
+        "type":"straight"
+    },
+    {
+        "from": "turgenevskaya",
+        "to": "kitay_gorod",
+        "blocked": false,
+        "danger":"high",
+        "type":"straight"
+    },
+    {
+        "from": "kitay_gorod",
+        "to": "tretyakovskaya",
+        "blocked": false,
+        "danger":"high",
+        "type":"straight"
+    },
+    {
+        "from": "tretyakovskaya",
+        "to": "novokuznetskaya",
+        "blocked": false,
+        "danger":"very high",
+        "type":"straight"
+    },
+    {
+        "from": "novokuznetskaya",
+        "to": "paveletskaya",
+        "blocked": false,
+        "danger":"middle",
+        "type":"straight"
+    },
+    {
         "from": "novoslobodskaya",
         "to": "belorusskaya",
+        "blocked": false,
+        "danger": "low",
+        "type":"arc",
+        "side": 1
+    },
+    {
+        "from": "belorusskaya",
+        "to": "krasnopresnenskaya",
         "blocked": false,
         "danger": "low",
         "type":"arc",
