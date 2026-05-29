@@ -53,6 +53,13 @@ tunnelsData.forEach(t => {
 
   const datalist = searchContainer.append("datalist").attr("id", "stationList");
 
+  var stationsArray = Object.values(stationsData);
+  datalist.selectAll("option")
+  .data(stationsArray)
+  .enter()
+  .append("option")
+  .attr("value", d => d.name);
+
   const straight = tunnelsData.filter(t => t.type === "straight");
   const arc = tunnelsData.filter(t => t.type === "arc");
    
